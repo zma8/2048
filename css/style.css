@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+#game-board {
+  width: 320px;
+  height: 320px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background: #e6f0ff;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.tile {
+  width: 70px;
+  height: 70px;
+  background: #bbc9d8;
+  border-radius: 3px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 70px;
+  text-align: center;
+  color: #9baaba;
+}
+.tile-2    { background: #d0e7ff; color: #003366; }
+.tile-4    { background: #a6d0ff; color: #003366; }
+.tile-8    { background: #7bb8ff; color: #ffffff; }
+.tile-16   { background: #519fff; color: #ffffff; }
+.tile-32   { background: #2886ff; color: #ffffff; }
+.tile-64   { background: #006dff; color: #ffffff; }
+.tile-128  { background: #005acc; color: #ffffff; }
+.tile-256  { background: #004699; color: #ffffff; }
+.tile-512  { background: #003366; color: #ffffff; }
+.tile-1024 { background: #002244; color: #ffffff; }
+.tile-2048 { background: #001122; color: #ffffff; }  
+
+
+#score {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#best{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#message {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+button {
+  background-color: #cce0ff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #003366;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #99c2ff;
+}
