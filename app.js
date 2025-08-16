@@ -72,7 +72,7 @@ board.forEach(row=>{
 });
 
 //display score and the status of the game 
-scoreDis.textContent=`score is ${score}`;
+scoreDis.textContent=`score is : ${score}`;
 messageDis.textContent=`game status : ${gameStatus}`;
 
 }
@@ -138,8 +138,8 @@ if(score>bestScore){
     bestScore=score;
 
 //print and save the best score 
-    document.getElementById('best').innerText="best : "+bestScore;
-    localStorage.setItem('best',bestScore);
+    document.getElementById('best').innerText="best score : "+bestScore;
+    localStorage.setItem('best score ',bestScore);
 }
 }
 
