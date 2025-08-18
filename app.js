@@ -67,9 +67,9 @@ board.forEach(row=>{
         tile.classList.add("merge");
         setTimeout(()=>tile.classList.remove("merge"),200);
 
-        tile.classList.add('animate__animated','animate__bounce');
+        tile.classList.add('animate__animated','animate__pulse');
         setTimeout(()=>{
-            tile.classList.remove('animate__animated','animate__bounce');
+            tile.classList.remove('animate__animated','animate__pulse');
         },500);
 
     }
