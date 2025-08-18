@@ -32,11 +32,11 @@ body {
   line-height: 100px;
   text-align: center;
   color: #9baaba;
-  transition: transform 0.2s ease-in-out;
+  /* transition: transform 0.2s ease-in-out; */
 }
-.tile.merge{
+/* .tile.merge{
   animation: pop 0.2s ease-in-out;
-}
+} */
 .tile-2    { background: #d0e7ff; color: #003366; }
 .tile-4    { background: #a6d0ff; color: #003366; }
 .tile-8    { background: #7bb8ff; color: #ffffff; }
@@ -193,7 +193,7 @@ body.dark #score,body.dark #best{
   font-size: 18px;
   border-radius: 6px;
 }
-@keyframes pop{
+/* @keyframes pop{
   0% {
     transform: scale(1);
   }
@@ -203,4 +203,4 @@ body.dark #score,body.dark #best{
   100% {
     transform: scale(1.2);
   }
-}
+} */

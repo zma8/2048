@@ -67,6 +67,11 @@ board.forEach(row=>{
         tile.classList.add("merge");
         setTimeout(()=>tile.classList.remove("merge"),200);
 
+        tile.classList.add('animate__animated','animate__bounce');
+        setTimeout(()=>{
+            tile.classList.remove('animate__animated','animate__bounce');
+        },500);
+
     }
 
 //adding the tile
@@ -305,3 +310,19 @@ toggleBtn.addEventListener("click",()=>{
     }
 
 })
+
+//animation
+const animateCSS=(element,animation,prefix='animate__')=>
+    new Promise((resolve,reject)=>{
+        const animationB=`${prefix}${animation}`;
+        const node=document.querySelector(element);
+
+        node.classList.add(`${prefix}animated`,animationB);
+
+        function handleAnimationEnd(event){
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`,animationB);
+            resolve('animation ended');
+        }
+        node.addEventListener('animationend',handleAnimationEnd,{once:true});
+    })
