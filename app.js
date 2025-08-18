@@ -10,6 +10,7 @@ const boardEl=document.getElementById('game-board');
 const scoreDis=document.getElementById('score');
 const messageDis=document.getElementById('message');
 const restartBtn=document.getElementById('restart');
+const toggleBtn=document.getElementById('dark-mode-toggle');
 
 //saving the best score of the game
 let bestScore=localStorage.getItem('best')||0;
@@ -62,6 +63,9 @@ board.forEach(row=>{
     if(cell!==0){
         tile.textContent=cell;
         tile.classList.add(`tile-${cell}`);
+
+        tile.classList.add("merge");
+        setTimeout(()=>tile.classList.remove("merge"),200);
 
     }
 
@@ -292,3 +296,12 @@ updateScore(0);
 restartBtn.addEventListener("click",init);
 init();
 
+toggleBtn.addEventListener("click",()=>{
+    document.body.classList.toggle("dark");
+    if(document.body.classList.contains("dark")){
+        toggleBtn.textContent="☀️ Light Mode";
+    }else{
+        toggleBtn.textContent="🌙 Dark Mode";;
+    }
+
+})

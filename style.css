@@ -3,12 +3,16 @@ body {
   text-align: center;
   background:linear-gradient(135deg,#cce0ff,#ffffff);
   margin: 0;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 }
 
 #game-board {
-  width: 480px;
-  height: 480px;
+  width: 90vw;
+  max-width: 480px;
+  aspect-ratio: 1/1;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -28,6 +32,10 @@ body {
   line-height: 100px;
   text-align: center;
   color: #9baaba;
+  transition: transform 0.2s ease-in-out;
+}
+.tile.merge{
+  animation: pop 0.2s ease-in-out;
 }
 .tile-2    { background: #d0e7ff; color: #003366; }
 .tile-4    { background: #a6d0ff; color: #003366; }
@@ -75,7 +83,7 @@ button {
 }
 
 button:hover {
-  background-color: #99c2ff;
+  background-color: #4175c4;
 }
 #container{
   display: flex;
@@ -86,9 +94,9 @@ button:hover {
   max-width: 1000px;
 }
 #instructions{
-  max-width: 400px;
+  width: 400px;
   background: #f8faff;
-  padding: 25px;
+  padding: 30px;
   border-radius: 10px;
   text-align: left;
   font-size: 18px;
@@ -138,4 +146,61 @@ button:hover {
 font-size: 36px;
 color: #003366;
 margin: 2;
+}
+body.dark{
+  background: #1a2a40;
+  color: #e0e6f0;
+}
+body.dark #game-board{
+  background: #2b3a56;
+}
+body.dark #game-container{
+  background: #243551;
+}
+body.dark #instructions{
+  background: #2b3a56;
+  color: #e0e6f0;
+}
+body.dark .tile-2    { background: #4a6fa5; color: #ffffff; }
+body.dark .tile-4    { background: #4175c4; color: #ffffff; }
+body.dark .tile-8    { background: #3366cc; color: #ffffff; }
+body.dark .tile-16   { background: #2a55b2; color: #ffffff; }
+body.dark .tile-32   { background: #204999; color: #ffffff; }
+body.dark .tile-64   { background: #193d80; color: #ffffff; }
+body.dark .tile-128  { background: #123366; color: #ffffff; }
+body.dark .tile-256  { background: #0b264d; color: #ffffff; }
+body.dark .tile-512  { background: #061a33; color: #ffffff; }
+body.dark .tile-1024 { background: #041326; color: #ffffff; }
+body.dark .tile-2048 { background: #020b1a; color: #ffffff; }
+
+body.dark #instructions-section h1{
+  color: #a8c5e8;
+}
+body.dark #message{
+  color: #c4d9f5;
+}
+body.dark #score,body.dark #best{
+  color: #c4d9f5;
+}
+#controls{
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+#controls button{
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+@keyframes pop{
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
