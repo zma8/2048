@@ -22,7 +22,7 @@ document.getElementById('best').innerText='best:' +bestScore;
 //clear the page for starting the game 
 function init(){
     score=0;
-    gameStatus='playing';
+    gameStatus='Playing';
     board=[];
     messageDis.textContent='';
 
@@ -86,8 +86,8 @@ board.forEach(row=>{
 
 
 //display score and the status of the game 
-scoreDis.textContent=`score is : ${score}`;
-messageDis.textContent=`game status : ${gameStatus}`;
+scoreDis.textContent=`Score is : ${score}`;
+messageDis.textContent=`Game Status : ${gameStatus}`;
 
 }
 
@@ -113,7 +113,7 @@ function checkWin(){
 for(let i=0;i<boardSize;i++){
     for (let j=0;j<boardSize;j++){
         if(board[i][j]===2048){
-            gameStatus='won';
+            gameStatus='Won';
            return true;
         }
     }
@@ -138,22 +138,22 @@ for(let i=0;i<boardSize;i++){
         }
     }
 }
- gameStatus='lost';
+ gameStatus='Lost';
   return true;
 }
 
 //score update 
 function updateScore(points){
 score+=points;
-scoreDis.innerText="score : "+score;
+scoreDis.innerText="Score : "+score;
 
 //check for the higher score
 if(score>bestScore){
     bestScore=score;
 
 //print and save the best score 
-    document.getElementById('best').innerText="best score : "+bestScore;
-    localStorage.setItem('best score ',bestScore);
+    document.getElementById('best').innerText="Best Score : "+bestScore;
+    localStorage.setItem('Best Score ',bestScore);
 }
 }
 
