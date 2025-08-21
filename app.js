@@ -2,6 +2,8 @@
 // SET board size to 4x4
 let boardSize=4;
 let board=[];
+let prevBoard=[];
+let prevScore=0;
 let gameStatus='playing';
 let score=0;
 
@@ -11,7 +13,7 @@ const scoreDis=document.getElementById('score');
 const messageDis=document.getElementById('message');
 const restartBtn=document.getElementById('restart');
 const toggleBtn=document.getElementById('dark-mode-toggle');
-
+const undoBtn=document.getElementById('undo-btn');
 
 //saving the best score of the game
 let bestScore=localStorage.getItem('best')||0;
@@ -159,6 +161,8 @@ if(score>bestScore){
 function move(direction){
 
 let moved=false;
+prevBoard=board.map(row=>[...row]);
+prevScore=score;
 
 //left movment 
 if(direction==='left'){
@@ -299,6 +303,13 @@ render();
 updateScore(0);
 }
 
+function undo(){
+    if(prevBoard.length>0){
+        board=prevBoard.map(row=>[...row]);
+        score=prevScore;
+        render();
+    }
+}
 // ADD event listener for restart button
 //on restart button click call init to restart the game 
 restartBtn.addEventListener("click",init);
@@ -313,6 +324,7 @@ toggleBtn.addEventListener("click",()=>{
     }
 
 })
+undoBtn.addEventListener('click',undo);
 
 //animation for the movment
 const animateCSS=(element,animation,prefix='animate__')=>
