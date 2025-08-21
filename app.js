@@ -12,6 +12,7 @@ const messageDis=document.getElementById('message');
 const restartBtn=document.getElementById('restart');
 const toggleBtn=document.getElementById('dark-mode-toggle');
 
+
 //saving the best score of the game
 let bestScore=localStorage.getItem('best')||0;
 document.getElementById('best').innerText='best:' +bestScore;
@@ -79,6 +80,8 @@ board.forEach(row=>{
 
     });
 });
+
+
 
 //display score and the status of the game 
 scoreDis.textContent=`score is : ${score}`;
@@ -311,7 +314,7 @@ toggleBtn.addEventListener("click",()=>{
 
 })
 
-//animation
+//animation for the movment
 const animateCSS=(element,animation,prefix='animate__')=>
     new Promise((resolve,reject)=>{
         const animationB=`${prefix}${animation}`;
