@@ -1,6 +1,8 @@
 # 2048 Game 🎮
 A simple implementation of the classic **2048 puzzle game** built with HTML, CSS, and JavaScript.
-![Screenshot of 2048 game]()
+
+<img width="1890" height="950" alt="image" src="https://github.com/user-attachments/assets/9ddba284-49ff-44ab-9ac5-70bef9f2080a" />
+
 ## 📖 Description
 **2048 Game** is a single-player sliding tile puzzle. The goal is to combine tiles with the same number to reach the **2048 tile**.
 Players use arrow keys to move tiles in four directions. Tiles merge when they collide, increasing the score.  
