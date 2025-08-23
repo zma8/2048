@@ -203,3 +203,9 @@ body.dark #score,body.dark #best{
  color: white;
  cursor: not-allowed;
 }
+p{
+  color: #c4d9f5;
+}
+#instructions h2{
+color: #c4d9f5;
+}
