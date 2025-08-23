@@ -92,9 +92,9 @@ board.forEach(row=>{
 
 
 //display score and the status of the game 
-scoreDis.textContent=`Score is : ${score}`;
+scoreDis.textContent=`Score : ${score}`;
 messageDis.textContent=`Game Status : ${gameStatus}`;
-
+document.getElementById('best').innerText="Best Score : "+bestScore;
 }
 
 // ADD event listener for arrow key presses
