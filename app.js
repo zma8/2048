@@ -19,7 +19,7 @@ const undoBtn=document.getElementById('undo-btn');
 
 //saving the best score of the game
 let bestScore=localStorage.getItem('best')||0;
-document.getElementById('best').innerText='best:' +bestScore;
+document.getElementById('best').innerText='Best Score :' +bestScore;
 
 //clear the page for starting the game 
 function init(){
@@ -94,7 +94,6 @@ board.forEach(row=>{
 //display score and the status of the game 
 scoreDis.textContent=`Score : ${score}`;
 messageDis.textContent=`Game Status : ${gameStatus}`;
-document.getElementById('best').innerText="Best Score : "+bestScore;
 }
 
 // ADD event listener for arrow key presses
@@ -297,16 +296,19 @@ else if(direction==='down'){
 }
 
 // IF tiles moved add anf check for win/lose
+//add the movedcount for the undo
 if(moved){
     movedCount++;
     addRandonTile();
     if(!checkWin()){
         checkLose();
     }
+//check if the user used undo 3 times
     if(undoCount<3){
         undoBtn.disabled=false;
     }
 }
+//disable undo if no movement
 else{
     undoBtn.disabled=true;
 }
@@ -317,7 +319,7 @@ render();
 //call update score funtion to update the score the best score of the game 
 updateScore(0);
 }
-
+//undo 
 function undo(){
     if(prevBoard.length>0){
         board=prevBoard.map(row=>[...row]);
@@ -334,7 +336,7 @@ function undo(){
 //on restart button click call init to restart the game 
 restartBtn.addEventListener("click",init);
 init();
-
+//dark mode button
 toggleBtn.addEventListener("click",()=>{
     document.body.classList.toggle("dark");
     if(document.body.classList.contains("dark")){
@@ -344,6 +346,7 @@ toggleBtn.addEventListener("click",()=>{
     }
 
 })
+//add event listener for undo
 undoBtn.addEventListener('click',undo);
 
 //animation for the movment
