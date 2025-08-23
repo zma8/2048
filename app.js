@@ -303,10 +303,12 @@ if(moved){
     if(!checkWin()){
         checkLose();
     }
-    if(moveCount >= 1 && undoCount < 3){
-        undoBtn.disabled = false;
+    if(undoCount<3){
+        undoBtn.disabled=false;
     }
-
+}
+else{
+    undoBtn.disabled=true;
 }
 
 //call render 
@@ -322,11 +324,11 @@ function undo(){
         score=prevScore;
         render();
         undoCount++;
-
+     }
         if(undoCount>=3){
             undoBtn.disabled=true;
         }
-    }
+    
 }
 // ADD event listener for restart button
 //on restart button click call init to restart the game 

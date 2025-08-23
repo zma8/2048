@@ -57,6 +57,14 @@ body {
   font-weight: bold;
   margin: 10px;
 }
+p{
+  color: #003366;
+}
+#instructions h2{
+font-size: 26px;
+color: #003366;
+margin: 2;
+}
 
 #message {
   font-size: 28px;
@@ -190,4 +198,8 @@ body.dark #score,body.dark #best{
   font-size: 18px;
   border-radius: 6px;
 }
-
+#undo-btn:disabled{
+ background-color: gray;
+ color: white;
+ cursor: not-allowed;
+}
