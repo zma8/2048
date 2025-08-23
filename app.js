@@ -6,6 +6,8 @@ let prevBoard=[];
 let prevScore=0;
 let gameStatus='playing';
 let score=0;
+let undoCount=0;
+let movedCount=0;
 
 // GET board element, score display, message display, and restart button
 const boardEl=document.getElementById('game-board');
@@ -25,6 +27,9 @@ function init(){
     gameStatus='Playing';
     board=[];
     messageDis.textContent='';
+    undoCount=0;
+    undoBtn.disabled=false;
+    movedCount=0;
 
 //this will  create an array inside my board and fill if with 0
     for(let i=0;i<boardSize;i++){
@@ -81,6 +86,7 @@ board.forEach(row=>{
     boardEl.appendChild(tile);
 
     });
+
 });
 
 
@@ -159,6 +165,9 @@ if(score>bestScore){
 
 // ON arrow key press move the tile 
 function move(direction){
+    if(gameStatus==='Won'){
+        return;
+    }
 
 let moved=false;
 prevBoard=board.map(row=>[...row]);
@@ -289,9 +298,13 @@ else if(direction==='down'){
 
 // IF tiles moved add anf check for win/lose
 if(moved){
+    movedCount++;
     addRandonTile();
     if(!checkWin()){
         checkLose();
+    }
+    if(moveCount >= 1 && undoCount < 3){
+        undoBtn.disabled = false;
     }
 
 }
@@ -308,6 +321,11 @@ function undo(){
         board=prevBoard.map(row=>[...row]);
         score=prevScore;
         render();
+        undoCount++;
+
+        if(undoCount>=3){
+            undoBtn.disabled=true;
+        }
     }
 }
 // ADD event listener for restart button
