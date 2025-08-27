@@ -8,7 +8,7 @@ A simple implementation of the classic **2048 puzzle game** built with HTML, CSS
 Players use arrow keys to move tiles in four directions. Tiles merge when they collide, increasing the score.  
 
 ## 🚀 Getting Started
-Play the game here: [Deployed 2048 Game](https://zma8.github.io/javascript-browser-game-project-2048/)  
+Play the game here: [Deployed 2048 Game] https://zma8.github.io/2048/
 Planning materials and design sketches can be found here: [Link to Planning Materials](2048.docx)
 
 ## 🎮 How to Play
