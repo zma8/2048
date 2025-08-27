@@ -164,9 +164,9 @@ if(score>bestScore){
 
 // ON arrow key press move the tile 
 function move(direction){
-    if(gameStatus==='Won'){
-        return;
-    }
+    // if(gameStatus==='Won'){
+    //     return;
+    // }
 
 let moved=false;
 prevBoard=board.map(row=>[...row]);
